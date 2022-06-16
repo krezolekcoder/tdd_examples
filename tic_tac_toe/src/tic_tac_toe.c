@@ -11,7 +11,7 @@
 #define GRID_DIMENSON           (3U)
 #define GRID_CENTER_IDX         (4U)
 #define PLAYER_LOCK_IDX         (15U)
-#define PLAYER_WIN_BIT_IDX   (14U) // if bit is set player has won 
+#define PLAYER_WIN_BIT_IDX      (14U) // if bit is set player has won 
 #define NONE_BIT_SET            (0xFFU) 
 #define MAX_MOVES_CNT           (5U)
 
@@ -19,9 +19,6 @@
 #define TIC_TAC_PLANE_UNLOCK_NEXT_MOVE(plane) (BIT_CLR(plane, PLAYER_LOCK_IDX))
 
 static tic_tac_toe_result_t prv_game_result = TIC_TAC_TOE_GAME_IDLE; 
-
-static uint16_t prv_player_O_plane_state = 0x0000; 
-static uint16_t prv_player_X_plane_state = 0x0000;  
 
 static uint16_t prv_tic_tac_toe_players[TIC_TAC_TOE_PLAYERS_CNT] = {0x0000, 0x0000}; 
 
@@ -42,8 +39,6 @@ static bool prv_check_draw(uint16_t *player_grid);
 void tic_tac_toe_init(void)
 {
     prv_game_result = TIC_TAC_TOE_GAME_RUNNING; 
-    prv_player_O_plane_state = 0x0000; 
-    prv_player_X_plane_state = 0x0000; 
 
     prv_tic_tac_toe_players[0] = 0x0000; 
     prv_tic_tac_toe_players[1] = 0x0000; 
