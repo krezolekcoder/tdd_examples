@@ -1,3 +1,6 @@
+/**
+ *  TDD implementation of kata : https://kata-log.rocks/tic-tac-toe-kata
+ */
 #ifndef TIC_TAC_TOE_H
 #define TIC_TAC_TOE_H
 

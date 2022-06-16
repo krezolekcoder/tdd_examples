@@ -1,4 +1,3 @@
-#define TEST
 #ifdef TEST
 
 #include "unity.h"
@@ -17,41 +16,41 @@ void tearDown(void)
 
 void test_tic_tac_toe_X_player_move_after_tic(void)
 {
-    bool tic_result = tic_tac_toe_player_move_update(TIC_TAC_TOE_O_PLAYER_ID,0, 0); 
-    bool tac_result = tic_tac_toe_player_move_update(TIC_TAC_TOE_X_PLAYER_ID,0, 0); 
+    bool player_O = tic_tac_toe_player_move_update(TIC_TAC_TOE_O_PLAYER_ID,0, 0); 
+    bool player_X = tic_tac_toe_player_move_update(TIC_TAC_TOE_X_PLAYER_ID,0, 0); 
 
 
-    TEST_ASSERT_EQUAL(false, tac_result);
+    TEST_ASSERT_EQUAL(false, player_X);
 }
 
 
 void test_tic_tac_toe_O_player_move_after_tac(void)
 {
-    bool tac_result = tic_tac_toe_player_move_update(TIC_TAC_TOE_O_PLAYER_ID,0, 0); 
-    bool tic_result = tic_tac_toe_player_move_update(TIC_TAC_TOE_X_PLAYER_ID,0, 0); 
+    bool player_X = tic_tac_toe_player_move_update(TIC_TAC_TOE_O_PLAYER_ID,0, 0); 
+    bool player_O = tic_tac_toe_player_move_update(TIC_TAC_TOE_X_PLAYER_ID,0, 0); 
 
-    TEST_ASSERT_EQUAL(false, tic_result); 
+    TEST_ASSERT_EQUAL(false, player_O); 
 
 }
 
 void test_tic_tac_toe_X_player_two_moves_in_a_row(void)
 {
-    bool tac_result = false; 
+    bool player_X = false; 
 
-    tac_result = tic_tac_toe_player_move_update(TIC_TAC_TOE_X_PLAYER_ID,0, 0); 
-    tac_result = tic_tac_toe_player_move_update(TIC_TAC_TOE_X_PLAYER_ID,1, 1); 
+    player_X = tic_tac_toe_player_move_update(TIC_TAC_TOE_X_PLAYER_ID,0, 0); 
+    player_X = tic_tac_toe_player_move_update(TIC_TAC_TOE_X_PLAYER_ID,1, 1); 
 
-    TEST_ASSERT_EQUAL(false, tac_result); 
+    TEST_ASSERT_EQUAL(false, player_X); 
 }
 
 void test_tic_tac_toe_O_player_two_moves_in_a_row(void)
 {
-    bool tic_result = false; 
+    bool player_O = false; 
 
-    tic_result = tic_tac_toe_player_move_update(TIC_TAC_TOE_O_PLAYER_ID,0, 0); 
-    tic_result = tic_tac_toe_player_move_update(TIC_TAC_TOE_O_PLAYER_ID,1, 1); 
+    player_O = tic_tac_toe_player_move_update(TIC_TAC_TOE_O_PLAYER_ID,0, 0); 
+    player_O = tic_tac_toe_player_move_update(TIC_TAC_TOE_O_PLAYER_ID,1, 1); 
 
-    TEST_ASSERT_EQUAL(false, tic_result); 
+    TEST_ASSERT_EQUAL(false, player_O); 
 }
 
 void test_tic_tac_toe_O_player_wins_row_0(void)
